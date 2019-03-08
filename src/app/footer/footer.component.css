@@ -1,0 +1,44 @@
+footer {
+	color: #aaa1a1;
+	border-top: solid 1px #aaa1a1;
+}
+
+.footer-style {
+	position: relative;
+	background-color: #aaa1a1;
+}
+
+.brand {
+	padding: 1rem 0;
+	font-size: 1.73rem;
+	text-decoration: none;
+	color: black;
+}
+
+.brand:hover {
+	color: #607d8b;
+	text-decoration: none;
+}
+
+.upArrowBtn {
+	position: absolute;
+
+	top: 0;
+	right: 0;
+	height: 100%;
+
+	padding: 1.6rem;
+	text-align: center;
+
+	background-color: black;
+	color: #aaa1a1;
+
+	border: none;
+
+	transition: background-color 0.2s;
+	cursor: pointer;
+}
+
+.upArrowBtn:hover {
+	background-color: #607d8b;
+}

@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+	production: false,
+
+	// Cloudinary
+	cloudinaryKey: 'ddq6uu3nz',
+	cloudinaryPreset: 'kidAartwork',
+	cloudinaryUrl: 'https://res.cloudinary.com/ddq6uu3nz/image/upload/'
 };
 
 /*

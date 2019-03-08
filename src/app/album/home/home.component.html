@@ -1,0 +1,33 @@
+<div class="container">
+	<article *ngFor="let album of albums" class="tutor-card">
+		<div class="flex-outer">
+			<div *ngIf="album.thumbnail" class="thumbnail flex-inner">
+				<cl-image 
+					public-id="{{album.thumbnail}}"
+					class="thumbnail-image" height="300" width="300">
+					<cl-transformation height="500" width="500" crop="thumb" quality="75"></cl-transformation>
+				</cl-image>
+			</div>	
+			<div class="card-body flex-inner">
+				<h2>{{album.name}}</h2>
+
+				<div class="flex-outer">
+					<div class="card-body-inner flex-inner">
+						<h3>{{album.artist}}</h3>
+						<p>
+							My rating: {{album.rating}}
+						</p>
+					</div>
+					<div class="flex-inner song-list">
+						<ul>
+							<li>{{album.song1}}</li><br>
+							<li>{{album.song2}}</li><br>
+							<li>{{album.song3}}</li><br>
+						</ul>
+			
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</div>

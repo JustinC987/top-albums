@@ -1,0 +1,60 @@
+<div class="modal-header">
+    <h3>
+      Add Album
+      <i (click)="dialogRef.close()" class="fas fa-times close-button"></i>
+    </h3>
+</div>
+  
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="modal-body">
+  
+      <label>Name<br>
+        <input formControlName="name">
+        <br>
+      </label>
+  
+      <label>Artist<br>
+        <input formControlName="artist">
+        <br>
+      </label>
+      
+	<label>
+				Album Artwork<br>
+				<cl-image
+					*ngIf="album && album.thumbnail"
+					public-id="{{album.thumbnail}}"
+          class="thumbnail-image"
+          height="500"
+					width="500"
+				>
+					<cl-transformation height="500" width="500" crop="thumb" quality="75"></cl-transformation>
+				</cl-image>
+      </label><br><br>
+      
+      <input class='img-upload' type="file"
+      class="thumbnail-upload-button"
+      id="file-upload"
+      accept="image/*"
+      (change)="uploadImg($event)"><br>
+      <label>Rating<br>
+        <input type="number" formControlName="rating"><br>
+      </label>
+
+      <label>Song 1<br>
+        <input formControlName="song1"><br>
+      </label>
+
+      <label>Song 2<br>
+        <input formControlName="song2"><br>
+      </label>
+
+      <label>Song 3<br>
+        <input formControlName="song3"><br>
+      </label>
+    </div>
+  
+    <div class="modal-footer">
+      <button class="button-danger" (click)="dialogRef.close()" type="button">Cancel</button>
+      <button class="button-primary" type="submit">Submit</button>
+    </div>
+  </form>

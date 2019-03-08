@@ -1,0 +1,52 @@
+<div class="modal-header">
+    <h3>
+      Updating {{data.name}} by {{data.artist}}
+      <i (click)="dialogRef.close()" class="fas fa-times close-button"></i>
+    </h3>
+  </div>
+  
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="modal-body">
+      
+      <label>
+        Name<br>
+        <input formControlName="name" placeholder="Required Field">
+      </label><br>
+  
+      <label>Artist<br>
+        <input formControlName="artist" placeholder="Required Field" >
+      </label><br>
+  
+      <label *ngIf="data.thumbnail">
+					Thumbnail<br>
+					<cl-image
+						*ngIf="data && data.thumbnail"
+						public-id="{{data.thumbnail}}"
+						class="thumbnail-image" width="352"> 
+						<cl-transformation height="500" width="500" crop="thumb" quality="75"></cl-transformation>
+					</cl-image><br>
+					<input type="file" id="file-upload" accept="image/*" (change)="uploadImg($event, 'thumbnail')"><br>
+					<br>
+				</label><br>
+  
+      <label>Rating<br>
+        <input formControlName="rating" placeholder="Required Field">
+      </label><br>
+
+      <label>Song 1<br>
+        <input formControlName="song1" placeholder="Required Field">
+      </label><br>
+
+      <label>Song 2<br>
+        <input formControlName="song2" placeholder="Required Field">
+      </label><br>
+
+      <label>Song 3<br>
+        <input formControlName="song3" placeholder="Required Field">
+      </label><br>
+    </div>
+    <div class="modal-footer">
+      <button (click)="dialogRef.close()" type="button">Cancel</button>
+      <button class="button-secondary" type="submit">Update</button>
+    </div>
+  </form>
